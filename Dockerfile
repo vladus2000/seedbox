@@ -7,8 +7,8 @@ RUN cd /usr/share/webapps/rutorrent/plugins;git clone https://github.com/autodl-
 
 COPY .rtorrent.rc /home/evil/
 COPY autodl.cfg /home/evil/.autodl/
-COPY conf.php /usr/share/webapps/rutorrent/plugins/autodl-irssi
-COPY default /etc/nginx/sites-available
+COPY conf.php /usr/share/webapps/rutorrent/plugins/autodl-irssi/
+COPY nginx.conf /etc/nginx/
 
 EXPOSE 49152
 
