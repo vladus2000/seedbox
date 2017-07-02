@@ -22,5 +22,5 @@ RUN chmod +x /startup.sh
 EXPOSE 80
 EXPOSE 49152
 
-CMD ["/bin/bash -c /startup.sh"]
+CMD /bin/bash -c /startup.sh
 
