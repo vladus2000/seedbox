@@ -19,7 +19,7 @@ COPY startup.sh /
 
 RUN chmod +x /startup.sh
 
-EXPOSE 80
+EXPOSE 8069
 EXPOSE 49152
 
 CMD /bin/bash -c /startup.sh
