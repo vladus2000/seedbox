@@ -9,7 +9,8 @@ RUN \
 	cd /usr/share/webapps/rutorrent/plugins && \
 	git clone https://github.com/autodl-community/autodl-rutorrent.git autodl-irssi && \
 	cp autodl-irssi/_conf.php autodl-irssi/conf.php && \
-	chown http:http -R autodl-irssi
+	chown http:http -R autodl-irssi && \
+	mkdir -p ~/rtorrent/.session
 
 COPY .rtorrent.rc /home/evil/
 COPY autodl.cfg /home/evil/.autodl/
@@ -18,7 +19,9 @@ COPY config.php /usr/share/webapps/rutorrent/conf/
 COPY nginx.conf /etc/nginx/
 COPY startup.sh /
 
-RUN chmod +x /startup.sh
+RUN chmod +x /startup.sh && \
+	sed -e 's/;extension=sockets/extension=sockets/' /etc/php/php.ini > /php.ini && \
+	mv /php.ini /etc/php/php.ini
 
 EXPOSE 8069
 EXPOSE 49152
