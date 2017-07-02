@@ -28,7 +28,7 @@
 	$forbidUserSettings = false;
 
 	$scgi_port = 0;
-	$scgi_host = "unix:///home/vlad/rtorrent/.session/rpc.socket";
+	$scgi_host = "unix:///home/evil/rtorrent/.session/rpc.socket";
 
 	// For web->rtorrent link through unix domain socket 
 	// (scgi_local in rtorrent conf file), change variables 
@@ -37,6 +37,7 @@
 	// $scgi_port = 0;
 	// $scgi_host = "unix:///tmp/rpc.socket";
 
+	//$XMLRPCMountPoint = "/rutorrent/RPC1";
 	$XMLRPCMountPoint = "/RPC2";		// DO NOT DELETE THIS LINE!!! DO NOT COMMENT THIS LINE!!!
 
 	$pathToExternals = array(
@@ -63,7 +64,7 @@
 
 	$locale = "UTF8";
 
-	$autodlPort = 6669;
+	$autodlPort = 4455;
 	$autodlPassword = "whydoineedone";
 
 
