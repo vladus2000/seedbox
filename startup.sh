@@ -1,0 +1,3 @@
+nohup screen -d -m -S rtorrent rtorrent > /dev/null 2>&1 &
+nohup screen -d -m -S irssi irssi > /dev/null 2>&1 &
+nginx
