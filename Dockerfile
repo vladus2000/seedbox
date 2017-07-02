@@ -17,8 +17,10 @@ COPY conf.php /usr/share/webapps/rutorrent/plugins/autodl-irssi/
 COPY nginx.conf /etc/nginx/
 COPY startup.sh /
 
+RUN chmod +x /startup.sh
+
 EXPOSE 80
 EXPOSE 49152
 
-CMD ["/startup.sh"]
+CMD ["/bin/bash -c /startup.sh"]
 
