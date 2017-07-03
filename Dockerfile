@@ -3,9 +3,9 @@ MAINTAINER vladus2000 <docker@matt.land>
 
 RUN su - evil -c 'yaourt -Syyu --needed --noconfirm;yaourt -S --needed --noconfirm rsync rtorrent geoip php-geoip plowshare rutorrent-git nginx irssi perl-archive-zip perl-digest-sha1 perl-html-parser perl-json perl-json-xs perl-net-ssleay perl-xml-libxml perl-xml-libxslt fcgi fcgiwrap spawn-fcgi screen php-fpm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3'
 
-COPY run/ /home/evil/run/
+COPY rar/ /home/evil/rar/
 
-RUN su - evil -c 'mkdir -p ~/.irssi/scripts/autorun;cd ~/.irssi/scripts;git init;git remote add origin https://github.com/autodl-community/autodl-irssi.git;git pull origin master;cp autodl-irssi.pl autorun/;mkdir -p ~/.autodl;touch ~/.autodl/autodl.cfg;touch ~/.rtorrent.rc mkdir -p ~/rtorrent/.session;cd ~/run;makepkg -si --noconfirm'
+RUN su - evil -c 'mkdir -p ~/.irssi/scripts/autorun;cd ~/.irssi/scripts;git init;git remote add origin https://github.com/autodl-community/autodl-irssi.git;git pull origin master;cp autodl-irssi.pl autorun/;mkdir -p ~/.autodl;touch ~/.autodl/autodl.cfg;touch ~/.rtorrent.rc mkdir -p ~/rtorrent/.session;cd ~/rar;makepkg -si --noconfirm'
 
 RUN \
 	cd /usr/share/webapps/rutorrent/plugins && \
