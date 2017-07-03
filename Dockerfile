@@ -12,7 +12,7 @@ RUN \
 	cd /usr/share/webapps/rutorrent/plugins && \
 	git clone https://github.com/autodl-community/autodl-rutorrent.git autodl-irssi && \
 	cp autodl-irssi/_conf.php autodl-irssi/conf.php && \
-	chown http:http -R autodl-irssi \
+	chown http:http -R autodl-irssi
 
 COPY .rtorrent.rc /home/evil/
 COPY autodl.cfg /home/evil/.autodl/
