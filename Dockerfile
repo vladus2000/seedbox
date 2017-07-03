@@ -23,7 +23,8 @@ COPY startup.sh /
 
 RUN chmod +x /startup.sh && \
 	sed -e 's/;extension=sockets/extension=sockets/' /etc/php/php.ini > /php.ini && \
-	mv /php.ini /etc/php/php.ini
+	mv /php.ini /etc/php/php.ini && \
+	rm -rf /var/cache/pacman/pkg/*
 
 EXPOSE 8069
 EXPOSE 49152
