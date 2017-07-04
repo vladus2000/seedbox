@@ -7,4 +7,9 @@
 
 /home/evil/downloads
 
+/home/evil/sickrage
+
 EXPOSE 49152 and 8069
+
+
+
