@@ -7,3 +7,4 @@
 
 /home/evil/downloads
 
+EXPOSE 49152 and 8069
