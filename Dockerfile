@@ -5,7 +5,7 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	echo >> /etc/pacman.conf && \
-	echo '[aurpackages]' >> /etc/pacman.conf && \
+	echo '[aur-archlinux]' >> /etc/pacman.conf && \
 	echo 'SigLevel = Never' >> /etc/pacman.conf && \
 	echo 'Server = https://repo.itmettke.de/aur/$repo/$arch' >> /etc/pacman.conf && \
 	su - evil -c 'yaourt -Syyu --needed --noconfirm && yaourt -S --needed --noconfirm rsync rtorrent geoip php-geoip plowshare mktorrent nginx irssi perl-archive-zip perl-digest-sha1 perl-html-parser perl-json perl-json-xs perl-net-ssleay perl-xml-libxml perl-xml-libxslt fcgi fcgiwrap spawn-fcgi screen php-fpm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 mediainfo ffmpeg python2-notify python2-babel python2-cheetah python2-mako rar' && \
