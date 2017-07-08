@@ -9,6 +9,8 @@
 
 /home/evil/sickrage
 
+/home/evil/.couchpotato
+
 EXPOSE 49152 and 8069
 
 

@@ -11,6 +11,7 @@ RUN su - evil -c 'yaourt -Syyu --needed --noconfirm;yaourt -S --needed --noconfi
 	chown -R evil ~evil/shiz && \
 	su - evil -c 'mkdir -p ~/.irssi/scripts/autorun ~/sickrage;cd ~/.irssi/scripts;git init;git remote add origin https://github.com/autodl-community/autodl-irssi.git;git pull origin master;cp autodl-irssi.pl autorun/;mkdir -p ~/.autodl;mv ~/shiz/autodl.cfg ~/.autodl/autodl.cfg;mv ~/shiz/.rtorrent.rc ~/.rtorrent.rc;mkdir -p ~/rtorrent/.session;cd ~/rar;makepkg -si --noconfirm' && \
 	su - evil -c 'git clone https://github.com/SickRage/SickRage.git;mv ~/shiz/config.ini ~/sickrage' && \
+	su - evil -c 'git clone https://github.com/CouchPotato/CouchPotatoServer.git;mv ~/shiz/settings.conf ~/.couchpotato/.' && \
 	mkdir -p /usr/share/webapps && \
 	cd /usr/share/webapps && \
 	git clone https://github.com/Novik/ruTorrent.git && \
