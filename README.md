@@ -11,6 +11,8 @@
 
 /home/evil/.couchpotato
 
+/home/evil/.config/Jackett
+
 EXPOSE 49152 and 8069
 
 
