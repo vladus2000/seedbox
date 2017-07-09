@@ -12,7 +12,7 @@ RUN \
 	pacman -U --needed --noconfirm https://archive.archlinux.org/packages/p/python2/python2-2.7.12-2-x86_64.pkg.tar.xz && \
 	pacman -S --needed --noconfirm openssl-1.0 && \
 	chown -R evil ~evil/shiz && \
-	su - evil -c 'mkdir -p ~/.irssi/scripts/autorun ~/sickrage && cd ~/.irssi/scripts && git init && git remote add origin https://github.com/autodl-community/autodl-irssi.git && git pull origin master && cp autodl-irssi.pl autorun/ && mkdir -p ~/.autodl && cp ~/shiz/autodl.cfg ~/.autodl/autodl.cfg && cp ~/shiz/.rtorrent.rc ~/.rtorrent.rc && mkdir -p ~/rtorrent/.session ~/.config/Jackett && cp shiz/ServerConfig.json ~/.config/Jackett' && \
+	su - evil -c 'mkdir -p ~/.irssi/scripts/autorun ~/sickrage && cd ~/.irssi/scripts && git init && git remote add origin https://github.com/autodl-community/autodl-irssi.git && git pull origin master && cp autodl-irssi.pl autorun/ && mkdir -p ~/.autodl && cp ~/shiz/autodl.cfg ~/.autodl/autodl.cfg && cp ~/shiz/.rtorrent.rc ~/.rtorrent.rc && mkdir -p ~/rtorrent/.session ~/.config/Jackett && cp ~/shiz/ServerConfig.json ~/.config/Jackett' && \
 	su - evil -c 'git clone https://github.com/SickRage/SickRage.git && cp ~/shiz/config.ini ~/sickrage' && \
 	su - evil -c 'git clone https://github.com/CouchPotato/CouchPotatoServer.git && mkdir ~/.couchpotato && cp ~/shiz/settings.conf ~/.couchpotato/.' && \
 	mkdir -p /usr/share/webapps && \
