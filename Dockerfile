@@ -4,11 +4,7 @@ MAINTAINER vladus2000 <docker@matt.land>
 COPY shiz/ /home/evil/shiz/
 
 RUN \
-	echo >> /etc/pacman.conf && \
-	echo '[aur-archlinux]' >> /etc/pacman.conf && \
-	echo 'SigLevel = Never' >> /etc/pacman.conf && \
-	echo 'Server = https://repo.itmettke.de/aur/$repo/$arch' >> /etc/pacman.conf && \
-	su - evil -c 'yaourt -Syyu --needed --noconfirm && yaourt -S --needed --noconfirm rsync rtorrent geoip php-geoip plowshare mktorrent nginx irssi perl-archive-zip perl-digest-sha1 perl-html-parser perl-json perl-json-xs perl-net-ssleay perl-xml-libxml perl-xml-libxslt fcgi fcgiwrap spawn-fcgi screen php-fpm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 mediainfo python2-notify python2-babel python2-cheetah python2-mako rar jackett' && \
+	su - evil -c 'yaourt -Syyu --needed --noconfirm && yaourt -S --needed --noconfirm rsync rtorrent geoip php-geoip plowshare mktorrent nginx irssi perl-archive-zip perl-digest-sha1 perl-html-parser perl-json perl-json-xs perl-net-ssleay perl-xml-libxml perl-xml-libxslt fcgi fcgiwrap spawn-fcgi screen php-fpm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 mediainfo python2-notify python2-babel python2-cheetah python2-mako jackett' && \
 	pacman -U --needed --noconfirm https://archive.archlinux.org/packages/p/python2/python2-2.7.12-2-x86_64.pkg.tar.xz && \
 	pacman -S --needed --noconfirm openssl-1.0 && \
 	chown -R evil ~evil/shiz && \
