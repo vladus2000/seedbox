@@ -23,6 +23,7 @@ RUN \
 	git clone https://github.com/autodl-community/autodl-rutorrent.git autodl-irssi && \
 	cp autodl-irssi/_conf.php autodl-irssi/conf.php && \
 	cd /usr/share/webapps/ && \
+	chown http:http -R rutorrent && \
 	cp ~evil/shiz/conf.php /usr/share/webapps/rutorrent/plugins/autodl-irssi/ && \
 	cp ~evil/shiz/config.php /usr/share/webapps/rutorrent/conf/ && \
 	cp ~evil/shiz/startup.sh / && \
@@ -30,8 +31,7 @@ RUN \
 	chmod +x /startup.sh && \
 	sed -e 's/;extension=sockets/extension=sockets/' /etc/php/php.ini > /php.ini && \
 	mv /php.ini /etc/php/php.ini && \
-	chown http:http -R rutorrent && \
-	rm -rf /var/cache/pacman/pkg/*
+	rm -rf /var/cache/pacman/pkg/* /var/lib/pacman/sync/*
 
 EXPOSE 8069
 EXPOSE 49152
