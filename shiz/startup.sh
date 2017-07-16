@@ -1,3 +1,5 @@
+/fixuser.sh evil
+/unevil.sh
 php-fpm
 nginx
 su - evil -c 'screen -d -m -S rtorrent rtorrent'
