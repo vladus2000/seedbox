@@ -9,8 +9,8 @@ RUN \
 	su - evil -c 'mkdir -p ~/sickrage && mkdir -p ~/.config/Jackett && cp ~/shiz/ServerConfig.json ~/.config/Jackett' && \
 	su - evil -c 'git clone https://github.com/SiCKRAGETV/SiCKRAGE.git SickRage && cp ~/shiz/config.ini ~/sickrage' && \
 	cd /home/evil/SickRage && \
-	sed "s/gi == 1.2//;s/pytz == .*$//" requirements.txt > r.txt
-	pip2 install -r requirements.txt && \
+	sed "s/gi == 1.2//;s/pytz == .*$//" requirements.txt > r.txt && \
+	pip2 install -r r.txt && \
 	su - evil -c 'git clone https://github.com/CouchPotato/CouchPotatoServer.git && mkdir ~/.couchpotato && cp ~/shiz/settings.conf ~/.couchpotato/.' && \
 	cp ~evil/shiz/startup.sh / && \
 	chmod +x /startup.sh && \
