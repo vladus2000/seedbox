@@ -5,7 +5,7 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	/install-devel.sh && \
-	su - evil -c 'yaourt -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 python2-notify python2-babel python2-cheetah python2-mako jackett python2-pip wget rsync unzip unrar p7zip zip openssh rar' && \
+	su - evil -c 'yaourt -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 python2-notify python2-babel python2-cheetah python2-mako jackett python2-pip wget rsync unzip p7zip zip openssh rar' && \
 	chown -R evil ~evil/shiz && \
 	su - evil -c 'mkdir -p ~/sickrage && mkdir -p ~/.config/Jackett && cp ~/shiz/ServerConfig.json ~/.config/Jackett' && \
 	su - evil -c 'git clone https://github.com/SiCKRAGETV/SiCKRAGE.git SickRage && cp ~/shiz/config.ini ~/sickrage' && \
