@@ -1,3 +1,4 @@
+su - evil -c 'mkdir -p ~evil/rtorrent/.session'
 /fixuser.sh evil
 /fixuser.sh jackett evil
 chown -R evil:evil /usr/lib/jackett /var/lib/jackett
