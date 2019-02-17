@@ -27,6 +27,7 @@ EXPOSE 49152
 CMD /bin/bash -c /startup.sh
 
 VOLUME /home/evil/downloads
+VOLUME /usr/share/webapps/rutorrent/share/settings
 VOLUME /var/lib/couchpotato
 VOLUME /var/lib/jackett
 VOLUME /opt/sickchill
