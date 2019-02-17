@@ -11,8 +11,6 @@ RUN \
 	chmod +x /startup.sh && \
 	/rm-devel.sh
 
-#su - evil -c 'git clone https://github.com/SiCKRAGETV/SiCKRAGE.git SickRage && cp ~/shiz/config.ini ~/sickrage' && \
-
 # for couchpotato
 EXPOSE 5050
 # for rutorrent (via nginx)
