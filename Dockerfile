@@ -28,6 +28,7 @@ CMD /bin/bash -c /startup.sh
 
 VOLUME /home/evil/downloads
 VOLUME /home/evil/rtorrent
+VOLUME /home/evil/.autodl/autodl.cfg
 VOLUME /usr/share/webapps/rutorrent/share/settings
 VOLUME /var/lib/couchpotato
 VOLUME /var/lib/jackett

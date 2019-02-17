@@ -1,5 +1,8 @@
 su - evil -c 'mkdir -p ~evil/rtorrent/.session'
+rm -f ~evil/rtorrent/.session/rtorrent.lock
 /fixuser.sh evil
+/fixuser.sh http evil
+chmod -R ugo+rw /usr/share/webapps/rutorrent/share/settings
 /fixuser.sh jackett evil
 chown -R evil:evil /usr/lib/jackett /var/lib/jackett
 /fixuser.sh sickchill evil
