@@ -29,5 +29,5 @@ VOLUME /home/evil/rtorrent
 VOLUME /usr/share/webapps/rutorrent/share/settings
 VOLUME /var/lib/couchpotato
 VOLUME /var/lib/jackett
-VOLUME /opt/sickchill
+VOLUME /opt/sickchill/data
 
