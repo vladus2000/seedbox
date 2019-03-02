@@ -6,7 +6,6 @@ COPY shiz/ /home/evil/shiz/
 RUN \
 	/install-devel.sh && \
 	su - evil -c 'yaourt -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 python2-notify python2-babel python2-cheetah python2-mako jackett python2-pip wget rsync unzip p7zip zip openssh rar sickchill couchpotato libglvnd ffmpeg' && \
-	cp -R /opt/sickchill/data /opt/sickchill/data_orig && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	chmod +x /*.sh && \
