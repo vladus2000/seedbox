@@ -16,7 +16,7 @@ su - evil -c 'screen -d -m -S sick python2 /opt/sickchill/app/SickBeard.py --qui
 
 su - evil -c 'screen -d -m -S couch couchpotato --config_file /var/lib/couchpotato/config.ini --data_dir /var/lib/couchpotato --pid_file=/run/couchpotato/couchpotato.pid --console_log'
 
-su - evil -c 'screen -d -m -S jackett /usr/bin/mono /usr/lib/jackett/JackettConsole.exe --DataFolder /var/lib/jackett'
+/run_jackett.sh &
 
 while true
 do
