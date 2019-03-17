@@ -7,13 +7,33 @@ chown -R evil:evil /opt/sickchill
 /fixuser.sh couchpotato evil
 chown -R evil:evil /var/lib/couchpotato /run/couchpotato
 
+/fixuser.sh radarr evil
+chown -R evil:evil /var/lib/radarr
+
+/fixuser.sh sonarr evil
+chown -R evil:evil /var/lib/sonarr
+
 /base_startup.sh
 
-su - evil -c 'screen -d -m -S couch couchpotato --config_file /var/lib/couchpotato/config.ini --data_dir /var/lib/couchpotato --pid_file=/run/couchpotato/couchpotato.pid --console_log'
+if [ -z $RUN_COUCHPOTATO ]; then
+	su - evil -c 'screen -d -m -S couch couchpotato --config_file /var/lib/couchpotato/config.ini --data_dir /var/lib/couchpotato --pid_file=/run/couchpotato/couchpotato.pid --console_log'
+fi
 
-/run_jackett.sh &
+if [ -z $RUN_JACKETT ]; then
+	/run_jackett.sh &
+fi
 
-/run_sickchill.sh &
+if [ -z $RUN_SICKCHILL ]; then
+	/run_sickchill.sh &
+fi
+
+if [ -z $RUN_RADARR ]; then
+	/run_radarr.sh &
+fi
+
+if [ -z $RUN_SONARR ]; then
+	/run_sonarr.sh &
+fi
 
 while true
 do
