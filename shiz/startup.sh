@@ -15,23 +15,23 @@ chown -R evil:evil /var/lib/sonarr
 
 /base_startup.sh
 
-if [ -z $RUN_COUCHPOTATO ]; then
+if [ ! -z $RUN_COUCHPOTATO ]; then
 	su - evil -c 'screen -d -m -S couch couchpotato --config_file /var/lib/couchpotato/config.ini --data_dir /var/lib/couchpotato --pid_file=/run/couchpotato/couchpotato.pid --console_log'
 fi
 
-if [ -z $RUN_JACKETT ]; then
+if [ ! -z $RUN_JACKETT ]; then
 	/run_jackett.sh &
 fi
 
-if [ -z $RUN_SICKCHILL ]; then
+if [ ! -z $RUN_SICKCHILL ]; then
 	/run_sickchill.sh &
 fi
 
-if [ -z $RUN_RADARR ]; then
+if [ ! -z $RUN_RADARR ]; then
 	/run_radarr.sh &
 fi
 
-if [ -z $RUN_SONARR ]; then
+if [ ! -z $RUN_SONARR ]; then
 	/run_sonarr.sh &
 fi
 
