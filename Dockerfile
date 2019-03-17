@@ -27,3 +27,4 @@ VOLUME /opt/sickchill/data
 VOLUME /var/lib/radarr
 VOLUME /var/lib/sonarr
 
+#TODO: fix reverse proxy in apps

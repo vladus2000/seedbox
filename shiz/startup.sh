@@ -10,8 +10,16 @@ chown -R evil:evil /var/lib/couchpotato /run/couchpotato
 /fixuser.sh radarr evil
 chown -R evil:evil /var/lib/radarr
 
+if [ ! -f /var/lib/radarr/config.xml ]; then
+	cp /rconfig.xml /var/lib/radarr/config.xml
+fi
+
 /fixuser.sh sonarr evil
 chown -R evil:evil /var/lib/sonarr
+
+if [ ! -f /var/lib/sonrr/config.xml ]; then
+	cp /sconfig.xml /var/lib/sonrr/config.xml
+fi
 
 /base_startup.sh
 
