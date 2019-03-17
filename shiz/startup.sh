@@ -23,7 +23,7 @@ fi
 chown -R evil:evil /var/lib/radarr
 
 if [ ! -f /var/lib/sonrr/config.xml ]; then
-	cp /home/evil/shiz/sconfig.xml /var/lib/sonrr/config.xml
+	cp /home/evil/shiz/sconfig.xml /var/lib/sonarr/config.xml
 fi
 /fixuser.sh sonarr evil
 chown -R evil:evil /var/lib/sonarr
