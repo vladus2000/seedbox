@@ -1,4 +1,4 @@
-/runuser.sh evil 'mkdir /config/{couchpotato,jackett,radarr,sonarr,mylar,pymedusa,sickchill}'
+/runuser.sh evil 'mkdir /config/{couchpotato,jackett,radarr,sonarr,mylar,pymedusa,sickchill,watcher}'
 if [ ! -f /var/lib/jackett/ServerConfig.json ]; then
 	cp /home/evil/shiz/ServerConfig.json /var/lib/jackett/.
 fi
@@ -35,6 +35,11 @@ if [ ! -f /var/lib/pymedusa/config.ini ]; then
 	cp /home/evil/shiz/pconfig.ini /var/lib/pymedusa/config.ini
 fi
 /fixuser.sh pymedusa evil
+
+if [ ! -f /opt/watcher3/userdata/config.cfg ]; then
+	cp /home/evil/shiz/config.cfg /opt/watcher3/userdata/config.cfg
+fi
+/fixuser.sh watcher evil
 
 if [ ! -f /config/nzbget.conf ]; then
 	cp /home/evil/shiz/nzbget.conf /config
@@ -75,6 +80,10 @@ fi
 
 if [ ! -z $RUN_NZBGET ] || [ ! -z $RUN_ALL ]; then
 	/run_nzbget.sh &
+fi
+
+if [ ! -z $RUN_WATCHER ] || [ ! -z $RUN_ALL ]; then
+	/run_watcher.sh &
 fi
 
 while true
