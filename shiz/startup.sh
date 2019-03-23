@@ -1,4 +1,4 @@
-/runuser.sh evil 'mkdir /config/{couchpotato,jackett,radarr,sonarr,mylar,pymedusa,sickchill,watcher}'
+/runuser.sh evil 'mkdir /config/{jackett,radarr,sonarr,mylar,pymedusa,sickchill,watcher}'
 if [ ! -f /var/lib/jackett/ServerConfig.json ]; then
 	cp /home/evil/shiz/ServerConfig.json /var/lib/jackett/.
 fi
@@ -9,12 +9,6 @@ if [ ! -f /opt/sickchill/data/config.ini ]; then
 	cp /home/evil/shiz/sconfig.ini /opt/sickchill/data/config.ini
 fi
 /fixuser.sh sickchill evil
-
-if [ ! -f /var/lib/couchpotato/config.ini ]; then
-	cp /home/evil/shiz/cconfig.ini /var/lib/couchpotato/config.ini
-fi
-/fixuser.sh couchpotato evil
-chown -R evil:evil /run/couchpotato
 
 if [ ! -f /var/lib/radarr/config.xml ]; then
 	cp /home/evil/shiz/rconfig.xml /var/lib/radarr/config.xml
@@ -49,10 +43,6 @@ chown -R evil:evil /config
 chown evil:evil /downloads
 
 /base_startup.sh
-
-if [ ! -z $RUN_COUCHPOTATO ] || [ ! -z $RUN_ALL ]; then
-	/run_couchpotato.sh &
-fi
 
 if [ ! -z $RUN_JACKETT ] || [ ! -z $RUN_ALL ]; then
 	/run_jackett.sh &

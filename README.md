@@ -14,8 +14,6 @@ The following vars control what runs:
 
 RUN\_ALL to run everything, or:
 
-RUN\_COUCHPOTATO
-
 RUN\_SICKCHILL
 
 RUN\_JACKETT
@@ -29,4 +27,6 @@ RUN\_MYLAR
 RUN\_PYMEDUSA
 
 RUN\_NZBGET
+
+RUN\_WATCHER
 
