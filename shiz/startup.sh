@@ -34,6 +34,12 @@ fi
 /fixuser.sh mylar evil
 chown -R evil:evil /var/lib/mylar
 
+if [ ! -f /var/lib/pymedusa/config.ini ]; then
+	cp /home/evil/shiz/pconfig.ini /var/lib/pymedusa/config.ini
+fi
+/fixuser.sh pymedusa evil
+chown -R evil:evil /var/lib/pymedusa
+
 /base_startup.sh
 
 if [ ! -z $RUN_COUCHPOTATO ]; then
@@ -58,6 +64,10 @@ fi
 
 if [ ! -z $RUN_MYLAR ]; then
 	/run_mylar.sh &
+fi
+
+if [ ! -z $RUN_PYMEDUSA ]; then
+	/run_pymedusa.sh &
 fi
 
 while true

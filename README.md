@@ -18,6 +18,8 @@ VOLUME /var/lib/sonarr
 
 VOLUME /var/lib/mylar
 
+VOLUME /var/lib/pymedusa
+
 /home/evil/.rtorrent.rc
 
 /home/evil/.autodl/autodl.cfg
@@ -41,4 +43,6 @@ RUN\_RADARR
 RUN\_SONARR
 
 RUN\_MYLAR
+
+RUN\_PYMEDUSA
 
