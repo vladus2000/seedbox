@@ -28,10 +28,16 @@ fi
 /fixuser.sh sonarr evil
 chown -R evil:evil /var/lib/sonarr
 
+if [ ! -f /var/lib/mylar/config.ini ]; then
+	cp /home/evil/shiz/mconfig.ini /var/lib/mylar/config.ini
+fi
+/fixuser.sh mylar evil
+chown -R evil:evil /var/lib/mylar
+
 /base_startup.sh
 
 if [ ! -z $RUN_COUCHPOTATO ]; then
-	su - evil -c 'screen -d -m -S couch couchpotato --config_file /var/lib/couchpotato/config.ini --data_dir /var/lib/couchpotato --pid_file=/run/couchpotato/couchpotato.pid --console_log'
+	/run_couchpotato.sh &
 fi
 
 if [ ! -z $RUN_JACKETT ]; then
@@ -48,6 +54,10 @@ fi
 
 if [ ! -z $RUN_SONARR ]; then
 	/run_sonarr.sh &
+fi
+
+if [ ! -z $RUN_MYLAR ]; then
+	/run_mylar.sh &
 fi
 
 while true

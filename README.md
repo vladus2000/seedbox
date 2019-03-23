@@ -16,6 +16,8 @@ VOLUME /var/lib/radarr
 
 VOLUME /var/lib/sonarr
 
+VOLUME /var/lib/mylar
+
 /home/evil/.rtorrent.rc
 
 /home/evil/.autodl/autodl.cfg
@@ -37,4 +39,6 @@ RUN\_JACKETT
 RUN\_RADARR
 
 RUN\_SONARR
+
+RUN\_MYLAR
 
