@@ -14,6 +14,7 @@ if [ ! -f /var/lib/radarr/config.xml ]; then
 	cp /home/evil/shiz/rconfig.xml /var/lib/radarr/config.xml
 fi
 /fixuser.sh radarr evil
+chown -R evil:evil /usr/lib/radarr
 
 if [ ! -f /var/lib/sonrr/config.xml ]; then
 	cp /home/evil/shiz/sconfig.xml /var/lib/sonarr/config.xml

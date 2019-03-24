@@ -5,7 +5,7 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	/install-devel.sh && \
-	su - evil -c 'yay -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 python2-notify python2-babel python2-cheetah python2-mako jackett python2-pip wget rsync unzip p7zip zip openssh rar sickchill libglvnd ffmpeg radarr sonarr su-exec mylar-git pymedusa par2cmdline nzbget watcher3' && \
+	su - evil -c 'yay -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 jackett wget rsync unzip p7zip zip openssh rar sickchill libglvnd ffmpeg radarr sonarr su-exec mylar-git pymedusa par2cmdline nzbget watcher3' && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	cp ~evil/shiz/nzbget.conf /config && \
@@ -32,3 +32,4 @@ CMD /bin/bash -c /startup.sh
 VOLUME /config
 VOLUME /downloads
 
+#su - evil -c 'yay -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 python2-notify python2-babel python2-cheetah python2-mako jackett python2-pip wget rsync unzip p7zip zip openssh rar sickchill libglvnd ffmpeg radarr sonarr su-exec mylar-git pymedusa par2cmdline nzbget watcher3' && \
