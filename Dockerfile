@@ -5,21 +5,19 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	/install-devel.sh && \
-	su - evil -c 'yay -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 jackett wget rsync unzip p7zip zip openssh rar sickchill libglvnd ffmpeg radarr sonarr su-exec mylar-git pymedusa par2cmdline nzbget watcher3' && \
+	su - evil -c 'yay -S --needed --noconfirm flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 jackett wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr sonarr su-exec mylar-git pymedusa par2cmdline nzbget' && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	cp ~evil/shiz/nzbget.conf /config && \
 	chmod +x /*.sh && \
-	rm -rf /var/lib/{jackett,radarr,sonarr,mylar,pymedusa} /opt/sickchill/data /opt/watcher3/userdata && \
-	su - evil -c 'mkdir -p /config/{jackett,radarr,sonarr,mylar,pymedusa,sickchill,watcher}' && \
+	rm -rf /var/lib/{jackett,radarr,sonarr,mylar,pymedusa} && \
+	su - evil -c 'mkdir -p /config/{jackett,radarr,sonarr,mylar,pymedusa}' && \
 	ln -s /config/jackett /var/lib/jackett && \
-	ln -s /config/sickchill /opt/sickchill/data && \
 	ln -s /config/radarr /var/lib/radarr && \
 	ln -s /config/sonarr /var/lib/sonarr && \
 	ln -s /config/mylar /var/lib/mylar && \
 	ln -s /config/pymedusa /var/lib/pymedusa && \
 	ln -s /config/nzbget.conf ~evil/.nzbget && \
-	ln -s /config/watcher /opt/watcher3/userdata && \
 	/rm-devel.sh
 
 # for rutorrent (via nginx)

@@ -1,14 +1,9 @@
-/runuser.sh evil 'mkdir /config/{jackett,radarr,sonarr,mylar,pymedusa,sickchill,watcher}'
+/runuser.sh evil 'mkdir /config/{jackett,radarr,sonarr,mylar,pymedusa}'
 if [ ! -f /var/lib/jackett/ServerConfig.json ]; then
 	cp /home/evil/shiz/ServerConfig.json /var/lib/jackett/.
 fi
 /fixuser.sh jackett evil
 chown -R evil:evil /usr/lib/jackett
-
-if [ ! -f /opt/sickchill/data/config.ini ]; then
-	cp /home/evil/shiz/sconfig.ini /opt/sickchill/data/config.ini
-fi
-/fixuser.sh sickchill evil
 
 if [ ! -f /var/lib/radarr/config.xml ]; then
 	cp /home/evil/shiz/rconfig.xml /var/lib/radarr/config.xml
@@ -31,11 +26,6 @@ if [ ! -f /var/lib/pymedusa/config.ini ]; then
 fi
 /fixuser.sh pymedusa evil
 
-if [ ! -f /opt/watcher3/userdata/config.cfg ]; then
-	cp /home/evil/shiz/config.cfg /opt/watcher3/userdata/config.cfg
-fi
-/fixuser.sh watcher evil
-
 if [ ! -f /config/nzbget.conf ]; then
 	cp /home/evil/shiz/nzbget.conf /config
 fi
@@ -47,10 +37,6 @@ chown evil:evil /downloads
 
 if [ ! -z $RUN_JACKETT ] || [ ! -z $RUN_ALL ]; then
 	/run_jackett.sh &
-fi
-
-if [ ! -z $RUN_SICKCHILL ] || [ ! -z $RUN_ALL ]; then
-	/run_sickchill.sh &
 fi
 
 if [ ! -z $RUN_RADARR ] || [ ! -z $RUN_ALL ]; then
@@ -71,10 +57,6 @@ fi
 
 if [ ! -z $RUN_NZBGET ] || [ ! -z $RUN_ALL ]; then
 	/run_nzbget.sh &
-fi
-
-if [ ! -z $RUN_WATCHER ] || [ ! -z $RUN_ALL ]; then
-	/run_watcher.sh &
 fi
 
 while true
