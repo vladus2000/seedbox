@@ -59,6 +59,10 @@ if [ ! -z $RUN_NZBGET ] || [ ! -z $RUN_ALL ]; then
 	/run_nzbget.sh &
 fi
 
+if [ -f /config/atr/config.txt ]; then
+	/run_atr.sh &
+fi
+
 while true
 do
 	sleep 1h
