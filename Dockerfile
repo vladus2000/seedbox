@@ -6,10 +6,6 @@ COPY shiz/ /home/evil/shiz/
 RUN \
 	/install-devel.sh && \
 	su - evil -c 'yay -S --needed --noconfirm pyinstaller flac lame mp3gain sox vorbis-tools vorbisgain whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr sonarr su-exec mylar3 pymedusa par2cmdline nzbget python-sphinx python-exceptiongroup streamlink-git' && \
-	pip uninstall --no-input --yes twisted && \
-	pip uninstall --no-input --yes automat && \
-	pip uninstall --no-input --yes pytest && \
-	pip install --no-input -r /usr/lib/pymedusa/requirements.txt && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	cp ~evil/shiz/nzbget.conf /config && \
