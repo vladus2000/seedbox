@@ -5,8 +5,7 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	/install-devel.sh && \
-	su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter pyinstaller flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec par2cmdline nzbget python-sphinx streamlink-git' && \
-	su - evil -c 'git clone https://aur.archlinux.org/pymedusa.git && cd pymedusa && sed -e s/pkgver=1.0.21/pkgver=1.0.25/ PKGBUILD > PKGBUILD2 && sed -e s/b0922e6186dfcc290d4f5425716cdad16bbfb52fd8012d9ada1af054673ad64c/75d86931d42a55fb2531e5d1dc6bd7ec140dba7b2a201457058f951a297c99c6/ PKGBUILD2 > PKGBUILD && git add PKGBUILD && git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git commit -m "fucking a" && yay --noconfirm --noprogressbar -Bi . && cd .. && rm -rf pymedusa' && \
+	su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter pyinstaller flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec par2cmdline nzbget python-sphinx streamlink-git pymedusa python311' && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	cp ~evil/shiz/nzbget.conf /config && \
@@ -31,6 +30,7 @@ CMD /bin/bash -c /startup.sh
 VOLUME /config
 VOLUME /downloads
 
+	#su - evil -c 'git clone https://aur.archlinux.org/pymedusa.git && cd pymedusa && sed -e s/pkgver=1.0.21/pkgver=1.0.25/ PKGBUILD > PKGBUILD2 && sed -e s/b0922e6186dfcc290d4f5425716cdad16bbfb52fd8012d9ada1af054673ad64c/75d86931d42a55fb2531e5d1dc6bd7ec140dba7b2a201457058f951a297c99c6/ PKGBUILD2 > PKGBUILD && git add PKGBUILD && git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git commit -m "fucking a" && yay --noconfirm --noprogressbar -Bi . && cd .. && rm -rf pymedusa' && \
 
 	#su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter pyinstaller flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec pymedusa par2cmdline nzbget python-sphinx streamlink-git python311 mylar3' && \
 
