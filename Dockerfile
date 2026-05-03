@@ -5,7 +5,7 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	/install-devel.sh && \
-	su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter pyinstaller flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec par2cmdline nzbget python-sphinx streamlink-git pymedusa python311' && \
+	su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec par2cmdline nzbget python-sphinx streamlink pymedusa python311' && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	cp ~evil/shiz/nzbget.conf /config && \
