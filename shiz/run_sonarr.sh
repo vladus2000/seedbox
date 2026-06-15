@@ -1,1 +1,1 @@
-/loop.sh /runuser.sh evil '/usr/bin/sonarr -nobrowser -data=/var/lib/sonarr'
+/loop.sh /runuser.sh evil '/usr/lib/sonarr/bin/Sonarr -nobrowser -data=/var/lib/sonarr'

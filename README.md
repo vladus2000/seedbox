@@ -4,7 +4,7 @@ VOLUME /config
 
 VOLUME /downloads
 
-EXPOSE 8069 for nginx, use /rutorrent /jackett /radarr etc
+EXPOSE 8069 for nginx, use /rutorrent /flood/ /jackett /radarr etc
 
 EXPOSE 49152 for rtorrent
 

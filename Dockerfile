@@ -5,7 +5,7 @@ COPY shiz/ /home/evil/shiz/
 
 RUN \
 	/install-devel.sh && \
-	su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec par2cmdline nzbget python-sphinx streamlink pymedusa python311' && \
+	su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec par2cmdline nzbget python-sphinx streamlink python311' && \
 	chown -R evil:evil ~evil/shiz && \
 	cp ~evil/shiz/*.sh / && \
 	cp ~evil/shiz/nzbget.conf /config && \
@@ -18,6 +18,8 @@ RUN \
 	ln -s /config/mylar /var/lib/mylar && \
 	ln -s /config/pymedusa /var/lib/pymedusa && \
 	ln -s /config/nzbget.conf ~evil/.nzbget && \
+	su - evil -c 'git clone https://github.com/pymedusa/Medusa && python3.11 -m venv Medusa && cd Medusa && . bin/activate && pip install -r requirements.txt' && \
+	su - evil -c 'git clone https://github.com/mylar3/mylar3 && python3.11 -m venv mylar3 && cd mylar3 && . bin/activate && pip install -r requirements.txt' && \
 	/rm-devel.sh
 
 # for rutorrent (via nginx)
@@ -30,9 +32,3 @@ CMD /bin/bash -c /startup.sh
 VOLUME /config
 VOLUME /downloads
 
-	#su - evil -c 'git clone https://aur.archlinux.org/pymedusa.git && cd pymedusa && sed -e s/pkgver=1.0.21/pkgver=1.0.25/ PKGBUILD > PKGBUILD2 && sed -e s/b0922e6186dfcc290d4f5425716cdad16bbfb52fd8012d9ada1af054673ad64c/75d86931d42a55fb2531e5d1dc6bd7ec140dba7b2a201457058f951a297c99c6/ PKGBUILD2 > PKGBUILD && git add PKGBUILD && git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git commit -m "fucking a" && yay --noconfirm --noprogressbar -Bi . && cd .. && rm -rf pymedusa' && \
-
-	#su - evil -c 'yay -S --needed --noconfirm --removemake --cleanafter pyinstaller flac lame mp3gain sox vorbis-tools whatmp3 jackett-bin wget rsync unzip p7zip zip openssh rar libglvnd ffmpeg radarr-bin sonarr-bin su-exec pymedusa par2cmdline nzbget python-sphinx streamlink-git python311 mylar3' && \
-
-	#su - evil -c 'git clone https://aur.archlinux.org/mylar3.git && cd mylar3 && sed -e s/pkgver=0.8.0/pkgver=0.8.3/ PKGBUILD > PKGBUILD2 && sed -e s/14bc2b0578f58f26f3b63958637f889573f7b5eee13ed4eaf75375f2a0faf678/ffb15cfc375590c872d0a6ce5fdc48323a94bdc623688c4598006aaf8edcdaa6/ PKGBUILD2 > PKGBUILD && git add PKGBUILD && git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git commit -m "fucking a" && yay --noconfirm --noprogressbar -Bi . && cd .. && rm -rf mylar3' && \
-	#pip install -r /usr/lib/mylar3/requirements.txt -t /usr/lib/mylar3/ && \

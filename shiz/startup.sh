@@ -61,5 +61,5 @@ fi
 
 while true
 do
-	sleep 1h
+	sleep 1d
 done
